@@ -8,7 +8,7 @@ int main()
     try {
         LogAnalyzer analyzer;
 
-        analyzer.readFile("../data/app.log");
+        analyzer.readFile("data/app.log");
         analyzer.analyze();
         analyzer.printResults();
 
