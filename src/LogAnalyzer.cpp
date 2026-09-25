@@ -35,4 +35,6 @@ void LogAnalyzer::readFile(const std::string& fileName){
 
 void LogANalyzer:Analyze() {}
 
-void LogAnlayzer::printResults() const {}
+void LogAnlayzer::printResults() const {
+    for(const auto& [level, count] : counters) std::cout << level << ": " << count << '\n';
+}
