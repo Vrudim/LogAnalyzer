@@ -35,9 +35,13 @@ void LogAnalyzer::readFile(const std::string& filename){
 
 void LogAnalyzer::analyze() {
     counters.clear();
-    for(const LogEntry& entry : entries) counters[entry.getLevel()]++;
+    for(const LogEntry& entry : entries) {
+        counters[entry.getLevel()]++;
+    }
 }
 
-void LogAnalayzer::printResults() const {
-    for(const auto& [level, count] : counters) std::cout << level << ": " << count << '\n';
+void LogAnalyzer::printResults() const {
+    for(const auto& [level, count] : counters) {
+        std::cout << level << ": " << count << '\n';
+    }
 }

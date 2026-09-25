@@ -3,18 +3,21 @@
 
 #include <iostream>
 
-int main(){
-
+int main()
+{
     try {
         LogAnalyzer analyzer;
+
         analyzer.readFile("../data/app.log");
         analyzer.analyze();
         analyzer.printResults();
-    } catch (const LogException & e) {
+
+    } catch (const LogException& e) {
         std::cerr << "Errore: " << e.what() << '\n';
         return 1;
+
     } catch (const std::exception& e) {
-        std::cerr << "Unexpected Error: " << e.what() << '\n';
+        std::cerr << "Errore inatteso: " << e.what() << '\n';
         return 1;
     }
 
