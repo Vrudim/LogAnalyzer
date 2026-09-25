@@ -5,11 +5,11 @@
 #include <sstream>
 #include <iostream>
 
-void LogAnalyzer::readFile(const std::string& fileName){
-    std::ifstream file(fileName);
+void LogAnalyzer::readFile(const std::string& filename){
+    std::ifstream file(filename);
 
     if (!file.is_open()) {
-        throw LogException("Impossibile aprire il file " + fileName);
+        throw LogException("Impossibile aprire il file " + filename);
     }
 
     std::string riga;
@@ -33,8 +33,11 @@ void LogAnalyzer::readFile(const std::string& fileName){
     }
 }
 
-void LogANalyzer:Analyze() {}
+void LogAnalyzer::analyze() {
+    counters.clear();
+    for(const LogEntry& entry : entries) counters[entry.getLevel()]++;
+}
 
-void LogAnlayzer::printResults() const {
+void LogAnalayzer::printResults() const {
     for(const auto& [level, count] : counters) std::cout << level << ": " << count << '\n';
 }

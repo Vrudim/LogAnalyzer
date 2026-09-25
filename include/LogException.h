@@ -5,5 +5,5 @@
 
 class LogException : public std::runtime_error {
     public:
-        explicit LogException (const std::string& message) : std::runtime__error(message){}
+        explicit LogException(const std::string& message) : std::runtime_error(message) {}
 };
